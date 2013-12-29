@@ -1,16 +1,64 @@
-let g:Powerline_symbols='fancy'
+**neocomplcache**
+=================
 
-set guifont=Ubuntu\ Mono\ for\ Powerline:h18
+Description
+-----------
 
+neocomplcache is the abbreviation of "neo-completion with cache". It
+provides keyword completion system by maintaining a cache of keywords in the
+current buffer. neocomplcache could be customized easily and has a lot more
+features than the Vim's standard completion feature.
 
-"""""""""""""""""""""""""""""""""""""""
-" plugin settings                     "
-"""""""""""""""""""""""""""""""""""""""
-" Tagbar
-nmap <leader>tt :TagbarToggle<CR>
+If you use Vim 7.3.885 or above with if\_lua feature, you should use
+neocomplete.  It is faster than neocomplcache.
 
+https://github.com/Shougo/neocomplete.vim
 
-" omnifunc
+Installation
+============
+
+* Extract the file and put files in your Vim directory
+   (usually ~/.vim/ or Program Files/Vim/vimfiles on Windows).
+* Execute `|:NeoComplCacheEnable|` command or
+`let g:neocomplcache_enable_at_startup = 1`
+in your `.vimrc`. Not in `.gvimrc`(`_gvimrc`)!
+
+Caution
+-------
+
+Because all variable names were changed in neocomplcache Ver.5, it is not
+backwards compatible. If you want to upgrade, you should use the following
+script from Mr.thinca.
+
+http://gist.github.com/422503
+
+Snippets feature(snippets\_complete source) was split from Ver.7.
+If you used it, please install neosnippet source manually.
+
+https://github.com/Shougo/neosnippet
+
+Screen shots
+============
+
+Original filename completion.
+-----------
+![Original filename completion.](http://1.bp.blogspot.com/_ci2yBnqzJgM/TD1O5_bOQ2I/AAAAAAAAADE/vHf9Xg_mrTI/s1600/filename_complete.png)
+
+Omni completion.
+----------------
+![Omni completion.](http://2.bp.blogspot.com/_ci2yBnqzJgM/TD1PTolkTBI/AAAAAAAAADU/knJ3eniuHWI/s1600/omni_complete.png)
+
+Completion with vimshell(http://github.com/Shougo/vimshell).
+------------------------------------------------------------
+![Completion with vimshell(http://github.com/Shougo/vimshell).](http://1.bp.blogspot.com/_ci2yBnqzJgM/TD1PLfdQrwI/AAAAAAAAADM/2pSFRTHwYOY/s1600/neocomplcache_with_vimshell.png)
+
+Vim completion
+------------------------------------------------------------
+![Vim completion.](http://1.bp.blogspot.com/_ci2yBnqzJgM/TD1PfKTlwnI/AAAAAAAAADs/nOGWTRLuae8/s1600/vim_complete.png)
+
+Setting examples
+
+```vim
 "Note: This option must set it in .vimrc(_vimrc).  NOT IN .gvimrc(_gvimrc)!
 " Disable AutoComplPop.
 let g:acp_enableAtStartup = 0
@@ -89,21 +137,15 @@ autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
 autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 
-"golang
-au BufRead,BufNewFile *.go set filetype=go
-autocmd FileType go setlocal omnifunc=gocomplete#Complete
-
 " Enable heavy omni completion.
 if !exists('g:neocomplcache_omni_patterns')
   let g:neocomplcache_omni_patterns = {}
 endif
-
 let g:neocomplcache_omni_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
 let g:neocomplcache_omni_patterns.c = '[^.[:digit:] *\t]\%(\.\|->\)'
 let g:neocomplcache_omni_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|->\)\|\h\w*::'
-let g:neocomplcache_omni_patterns.go = '\h\w*\.\?'
 
 " For perlomni.vim setting.
 " https://github.com/c9s/perlomni.vim
 let g:neocomplcache_omni_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
-
+```
