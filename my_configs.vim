@@ -1,8 +1,13 @@
 set nu
 set guifont=Ubuntu\ Mono\ for\ Powerline:h18
 
-colorscheme ir_black
+set background=dark
+colorscheme solarized
+set cursorline
 
+" key map
+
+map <leader>q :q!<cr>
 
 """""""""""""""""""""""""""""""""""""""
 " plugin settings                     "
