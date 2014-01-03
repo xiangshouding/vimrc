@@ -2,6 +2,8 @@ set nu
 set guifont=Ubuntu\ Mono\ for\ Powerline:h18
 
 set background=dark
+let g:solarized_termcolors=256
+
 colorscheme solarized
 set cursorline
 
@@ -15,45 +17,51 @@ map <leader>q :q!<cr>
 """""""""""""""""""""""""""""""""""""""
 " plugin settings                     "
 """""""""""""""""""""""""""""""""""""""
-" Tagbar
-nmap <leader>tt :TagbarToggle<CR>
-let g:tagbar_autofocus = 0
+    " clang completion
+    " let g:clang_library_path = '/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/'
 
-let g:tagbar_type_go = {
-    \ 'ctagstype' : 'go',
-    \ 'kinds'     : [
-        \ 'p:package',
-        \ 'i:imports:1',
-        \ 'c:constants',
-        \ 'v:variables',
-        \ 't:types',
-        \ 'n:interfaces',
-        \ 'w:fields',
-        \ 'e:embedded',
-        \ 'm:methods',
-        \ 'r:constructor',
-        \ 'f:functions'
-    \ ],
-    \ 'sro' : '.',
-    \ 'kind2scope' : {
-        \ 't' : 'ctype',
-        \ 'n' : 'ntype'
-    \ },
-    \ 'scope2kind' : {
-        \ 'ctype' : 't',
-        \ 'ntype' : 'n'
-    \ },
-    \ 'ctagsbin'  : 'gotags',
-    \ 'ctagsargs' : '-sort -silent'
-\ }
+" Tagbar
+    nmap <leader>tt :TagbarToggle<CR>
+    let g:tagbar_autofocus = 0
+
+    let g:tagbar_type_go = {
+        \ 'ctagstype' : 'go',
+        \ 'kinds'     : [
+            \ 'p:package',
+            \ 'i:imports:1',
+            \ 'c:constants',
+            \ 'v:variables',
+            \ 't:types',
+            \ 'n:interfaces',
+            \ 'w:fields',
+            \ 'e:embedded',
+            \ 'm:methods',
+            \ 'r:constructor',
+            \ 'f:functions'
+        \ ],
+        \ 'sro' : '.',
+        \ 'kind2scope' : {
+            \ 't' : 'ctype',
+            \ 'n' : 'ntype'
+        \ },
+        \ 'scope2kind' : {
+            \ 'ctype' : 't',
+            \ 'ntype' : 'n'
+        \ },
+        \ 'ctagsbin'  : 'gotags',
+        \ 'ctagsargs' : '-sort -silent'
+    \ }
 
 " vim powerline
-let g:Powerline_symbols='fancy'
+    let g:Powerline_symbols='fancy'
 
 " golang
-autocmd FileType go autocmd BufWritePre <buffer> Fmt
+    autocmd FileType go autocmd BufWritePre <buffer> Fmt
 
 " neo start {{{
+    " close scratch window
+    set completeopt-=preview
+
     "Note: This option must set it in .vimrc(_vimrc).  NOT IN .gvimrc(_gvimrc)!
     " Disable AutoComplPop.
     let g:acp_enableAtStartup = 0
