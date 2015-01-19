@@ -11,6 +11,9 @@ set foldlevel=1000
 
 map <leader>q :q!<cr>
 
+" https://github.com/mattn/emmet-vim/issues/159#issuecomment-26300032
+imap <expr> <tab> emmet#expandAbbrIntelligent("\<tab>")
+
 """""""""""""""""""""""""""""""""""""""
 " plugin settings                     "
 """""""""""""""""""""""""""""""""""""""
