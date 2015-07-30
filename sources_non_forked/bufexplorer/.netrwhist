@@ -1,3 +1,11 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =1
+let g:netrw_dirhist_cnt =9
 let g:netrw_dirhist_1='/Users/shouding/Downloads/fis/loader'
+let g:netrw_dirhist_2='/Users/shouding/Dev/fis2/dev/node-pngquant-native/gyp/third-party/libpng'
+let g:netrw_dirhist_3='/Users/shouding/Dev/fis2/dev/gyp/third-party'
+let g:netrw_dirhist_4='/Users/shouding/Bin/lib/node_modules/fis-plus/node_modules/fis-parser-less/node_modules/less/lib/less-node'
+let g:netrw_dirhist_5='/Users/shouding/Dev/fis3/dev/fis3/debug/node_modules/fis3-postprocessor-a'
+let g:netrw_dirhist_6='/Users/shouding/Dev/sina/indexjs/1'
+let g:netrw_dirhist_7='/Users/shouding/Downloads/debug/include'
+let g:netrw_dirhist_8='/Users/shouding/Dev/fis2/dev/fis-kernel/test/ut/compile'
+let g:netrw_dirhist_9='/Users/shouding/Downloads/a'

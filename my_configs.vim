@@ -1,11 +1,15 @@
 set nu
-set guifont=Source\ Code\ Pro:h15
+
+set guifont=Source\ Code\ Pro:h14
+set guifontwide=Microsoft\ Yahei:h14
+
+set completeopt-=preview
 
 colorscheme smyck
 set cursorline
 
 " close fold
-set foldlevel=1000
+set nofoldenable
 
 " key map
 
@@ -55,3 +59,4 @@ let g:tagbar_type_go = {
 "
 
 hi! VertSplit guifg=fg guibg=bg gui=NONE
+autocmd Filetype javascript setlocal ts=2 sts=2 sw=2
