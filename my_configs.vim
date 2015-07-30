@@ -5,7 +5,8 @@ set guifontwide=Microsoft\ Yahei:h14
 
 set completeopt-=preview
 
-colorscheme smyck
+" colorscheme smyck
+colorscheme ir_black
 set cursorline
 
 " close fold
